@@ -39,6 +39,6 @@ namespace BusLocator.Domain.Entity
         public string ModifiedBy { get; set; }
         public DateTime ModifiedDate { get; set; }
 
-        public RecordStateType RecordStateType { get; set; }
+        public RecordStateType RecordStateType { get; set; } 
     }
 }
