@@ -24,8 +24,13 @@ namespace BusLocator.Web
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap.css"));
+
+            bundles.Add(new StyleBundle("~/Site/css").Include(
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Admin/css").Include(
+                     "~/Content/admin.css"));
         }
     }
 }
