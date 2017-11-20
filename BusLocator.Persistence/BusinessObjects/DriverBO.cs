@@ -10,23 +10,26 @@ namespace BusLocator.Persistence.BusinessObjects
     [Table("Driver")]
     public class DriverBO : Driver
     {
-        public DriverBO()
+        public DriverBO(string userId)
         {
-            Id = Guid.NewGuid();
+            UserId = userId;
         }
 
         [Key]
-        public override Guid Id
+        public override string UserId
         {
             get
             {
-                return base.Id;
+                return base.UserId;
             }
 
             set
             {
-                base.Id = value;
+                base.UserId = value;
             }
         }
+
+        [ForeignKey("UserId")]
+        public virtual UserBO User { get; set; }
     }
 }

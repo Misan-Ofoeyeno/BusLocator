@@ -1,7 +1,7 @@
-﻿@model IEnumerable<BusLocator.Web.Models.DriverViewModel>
+﻿@model IEnumerable<BusLocator.Web.Models.BusViewModel>
 
 @{
-    ViewBag.Title = "Drivers";
+    ViewBag.Title = "Buses";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -15,7 +15,7 @@
                 <i class="fa fa-dashboard"></i>  <a href="#">Dashboard</a>
             </li>
             <li class="active">
-                <i class="fa fa-bar-chart-o"></i> Drivers
+                <i class="fa fa-bar-chart-o"></i> Buses
             </li>
         </ol>
     </div>
@@ -34,9 +34,9 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Full Name</th>
-                                <th>Employee ID</th>
-                                <th>Email</th>
+                                <th>Bus Id</th>
+                                <th>Has Accessibility <i class="fa fa-wheelchair"></i></th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -45,9 +45,9 @@
                                 int i = 1;
                                 <tr>
                                     <td>1</td>
-                                    <td>@m.Fullname</td>
-                                    <td>@m.EmployeeId</td>
-                                    <td>@m.Email</td>
+                                    <td>@m.BusId</td>
+                                    <td>@m.HasAccessibility</td>
+                                    <td></td>
                                 </tr>
                             }
                         </tbody>
@@ -61,3 +61,4 @@
     </div>
 
 </div>
+

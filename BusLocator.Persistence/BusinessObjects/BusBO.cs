@@ -27,20 +27,5 @@ namespace BusLocator.Persistence.BusinessObjects
                 base.Id = value;
             }
         }
-
-        public override Guid RouteId
-        {
-            get
-            {
-                return base.RouteId;
-            }
-            set
-            {
-                base.RouteId = value;
-            }
-        }
-
-        [ForeignKey("RouteId")]
-        public virtual RouteBO Route { get; set; }
     }
 }

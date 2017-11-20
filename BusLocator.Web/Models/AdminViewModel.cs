@@ -5,9 +5,7 @@ using System.Web;
 
 namespace BusLocator.Web.Models
 {
-    public class DriverLoginViewModel
+    public class AdminViewModel
     {
-        public string Username { get; set; }
-        public string Password { get; set; }
     }
 }

@@ -10,8 +10,8 @@ namespace BusLocator.Domain.Entity
     {
         public virtual Guid Id { get; set; }
         public virtual Guid BusId { get; set; }
-        public virtual Guid DriverId { get; set; }
+        public virtual string DriverUserId { get; set; }
         public DateTime TripStartTime { get; set; }
-        public DateTime TripEndTime { get; set; }
+        public DateTime? TripEndTime { get; set; }
     }
 }

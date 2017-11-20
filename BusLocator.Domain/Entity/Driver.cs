@@ -8,7 +8,7 @@ namespace BusLocator.Domain.Entity
 {
     public class Driver : BaseEntity
     {
-        public virtual Guid Id { get; set; }
+        public virtual String UserId { get; set; }
         public string EmployeeId { get; set; }
     }
 }

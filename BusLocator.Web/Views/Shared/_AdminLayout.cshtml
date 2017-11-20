@@ -48,17 +48,23 @@
                         <a href="#"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-table"></i> Backup Table</a>
+                        <a href="/Admin/AddDriver"><i class="fa fa-fw fa-table"></i> Drivers</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                        <a href="/Admin/AddRoute"><i class="fa fa-fw fa-bar-chart-o"></i> Routes</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-desktop"></i> Applications</a>
+                        <a href="/Admin/AddBus"><i class="fa fa-fw fa-desktop"></i> Buses</a>
                     </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-wrench"></i> Settings</a>
-                    </li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li>
+                            @using (Html.BeginForm("Logout", "Account", FormMethod.Post, new { id = "sign-outForm" }))
+                            {
+                                <a href="javascript:document.getElementById('sign-outForm').submit()"><i class="fa fa-fw fa-wrench"></i> Logout</a>
+                            }
+                        </li>
+                    }
                 </ul>
             </div>
         </nav>
@@ -72,6 +78,8 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
+    @*@Scripts.Render("~/bundles/unobtrusiveAjax")*@
     @RenderSection("scripts", required: false)
 </body>
 

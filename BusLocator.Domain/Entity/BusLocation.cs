@@ -10,6 +10,7 @@ namespace BusLocator.Domain.Entity
     {
         public virtual Guid Id { get; set; }
         public virtual Guid BusId { get; set; }
+        public virtual Guid RouteId { get; set; }
         public decimal Latitude { get; set; }
         public decimal Longitude { get; set; }
         public DateTime UpdateTime { get; set; }

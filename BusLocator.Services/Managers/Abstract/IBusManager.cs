@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -41,6 +42,10 @@ namespace BusLocator.Services.Managers.Abstract
 
         #region Get Methods
 
+        IQueryable<DriverBO> Drivers(Expression<Func<DriverBO, bool>> predicate);
+        IQueryable<RouteBO> Routes(Expression<Func<RouteBO, bool>> predicate);
+        IQueryable<BusBO> Buses(Expression<Func<BusBO, bool>> predicate);
+        IQueryable<BusDriverBO> BusDrivers(Expression<Func<BusDriverBO, bool>> predicate);
 
         #endregion
     }

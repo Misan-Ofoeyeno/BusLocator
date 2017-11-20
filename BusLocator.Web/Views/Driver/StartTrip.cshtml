@@ -1,0 +1,40 @@
+﻿@model BusLocator.Web.Controllers.DriverTripViewModel
+
+@{
+    ViewBag.Title = "StartTrip";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>
+            Welcome, Name
+        </h2>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Start trip
+            </div>
+            <div class="panel-body">
+                <form role="form">
+
+                    <div class="form-group">
+                        <label>Select Route:</label>
+                        @Html.DropDownListFor(m => m.RouteId, new SelectList(Model.RouteList, "Value", "Text", 0), new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select Bus:</label>
+                        @Html.DropDownListFor(m => m.BusId, new SelectList(Model.BusList, "Value", "Text", 0), new { @class = "form-control" })
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Start Trip</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+

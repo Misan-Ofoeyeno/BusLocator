@@ -47,7 +47,6 @@ namespace BusLocator.Web
 
             app.UseOAuthAuthorizationServer(new OAuthAuthorizationServerOptions
             {
-
                 TokenEndpointPath = new PathString("/token"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
 #if DEBUG

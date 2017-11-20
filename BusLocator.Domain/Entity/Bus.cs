@@ -10,6 +10,6 @@ namespace BusLocator.Domain.Entity
     {
         public virtual Guid Id { get; set; }
         public string BusId { get; set; }
-        public virtual Guid RouteId { get; set; }
+        public bool HasAccessibility { get; set; }
     }
 }

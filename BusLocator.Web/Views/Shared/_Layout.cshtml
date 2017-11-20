@@ -17,13 +17,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("BusLocator", "Index", "Home", new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    @if (User.IsInRole("Driver"))
+                    {
+                        <li><a href="#">New Trip</a></li>
+                    }
+
+                    <li><a href="#">Report an Issue</a></li>
+
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li>
+                            @using (Html.BeginForm("Logout", "account", FormMethod.Post, new { id = "sign-outForm" }))
+                            {
+                                <a href="javascript:document.getElementById('sign-outForm').submit()" class="btn btn-sm btn-calltoaction2"><span>Logout</span></a>
+                            }
+                        </li>
+                    }
                 </ul>
             </div>
         </div>
@@ -32,7 +45,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - BusLocator Application</p>
         </footer>
     </div>
 

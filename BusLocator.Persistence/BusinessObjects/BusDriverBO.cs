@@ -39,22 +39,22 @@ namespace BusLocator.Persistence.BusinessObjects
             }
         }
 
-        public override Guid DriverId
+        public override string DriverUserId
         {
             get
             {
-                return base.DriverId;
+                return base.DriverUserId;
             }
             set
             {
-                base.DriverId = value;
+                base.DriverUserId = value;
             }
         }
 
         [ForeignKey("BusId")]
         public virtual BusBO Bus { get; set; }
 
-        [ForeignKey("DriverId")]
+        [ForeignKey("DriverUserId")]
         public virtual DriverBO Driver { get; set; }
     }
 }

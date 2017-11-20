@@ -66,13 +66,9 @@ namespace BusLocator.Persistence.Migrations
 
             var rolesForUser = userManager.GetRoles(user.Id);
 
-            if (!rolesForUser.Contains(role1.Name))
+            if (!rolesForUser.Contains("Admin"))
             {
-                userManager.AddToRole(user.Id, role1.Name);
-            }
-            if (!rolesForUser.Contains(role2.Name))
-            {
-                userManager.AddToRole(user.Id, role1.Name);
+                userManager.AddToRole(user.Id, "Admin");
             }
         }
     }
